@@ -18,15 +18,12 @@ class _VideoMainState extends State<VideoMain> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-            child: FractionallySizedBox(
+        Positioned.fill(
           child: Image.asset(
             'assets/images/video1.jpg',
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.fitHeight,
           ),
-          widthFactor: 100,
-          heightFactor: 100,
-        )),
+        ),
         Positioned(
             bottom: 10,
             left: 10,

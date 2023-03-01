@@ -1,4 +1,6 @@
+import 'package:douyin/screen/Capture/index.dart';
 import 'package:douyin/screen/Home/index.dart';
+import 'package:douyin/screen/User/Self/main.dart';
 import 'package:douyin/widgets/appBar/main.dart';
 import 'package:douyin/widgets/bttomNavigationBar/main.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(fontFamily: 'pingfang'),
-      home: EntryScaffold(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => EntryScaffold()),
+        GetPage(
+          name: '/capture',
+          page: () => CapturePage(),
+        ),
+      ],
     );
   }
 }
@@ -28,7 +37,13 @@ class EntryScaffold extends StatefulWidget {
   State<EntryScaffold> createState() => _EntryScafoldState();
 }
 
-List<Widget> indexPages = [const HomePage()];
+List<Widget> indexPages = [
+  const HomePage(),
+  Container(),
+  Container(),
+  Container(),
+  const UserSelfPage()
+];
 
 class _EntryScafoldState extends State<EntryScaffold> {
   int index = 0;
@@ -47,7 +62,12 @@ class _EntryScafoldState extends State<EntryScaffold> {
         currentIndex: index,
         onTap: (index) {
           this.index = index;
-          setState(() {});
+          setState(() {
+            if (this.index == 2) {
+              this.index = 0;
+              Get.toNamed('/capture');
+            }
+          });
         },
       ),
     );

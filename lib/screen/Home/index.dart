@@ -26,10 +26,14 @@ class _HomePageState extends State<HomePage> {
       color: Colors.grey,
       child: Stack(
         children: [
-          Positioned(child: DyAppBar(), top: 0),
           PageView(
-            children: [VideoMain()],
-          )
+            scrollDirection: Axis.vertical,
+            children: [
+              VideoMain(),
+              VideoMain(),
+            ],
+          ),
+          const Positioned(top: 0, left: 0, child: DyAppBar()),
         ],
       ),
     );
