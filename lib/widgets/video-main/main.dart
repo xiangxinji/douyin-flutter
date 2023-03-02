@@ -1,3 +1,4 @@
+import 'package:douyin/widgets/video/main.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
@@ -19,10 +20,7 @@ class _VideoMainState extends State<VideoMain> {
     return Stack(
       children: [
         Positioned.fill(
-          child: Image.asset(
-            'assets/images/video1.jpg',
-            fit: BoxFit.fitHeight,
-          ),
+          child: DyVideo(),
         ),
         Positioned(
             bottom: 10,
