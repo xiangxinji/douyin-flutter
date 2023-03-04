@@ -9,21 +9,31 @@ class DyVideo extends StatefulWidget {
 }
 
 class _DyVideoState extends State<DyVideo> {
+  late BetterPlayerController _betterPlayerController;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    BetterPlayerDataSource betterPlayerDataSource = BetterPlayerDataSource(
+        BetterPlayerDataSourceType.network, "http://192.168.71.6:8080/bee.mp4");
+
+    _betterPlayerController = BetterPlayerController(
+        BetterPlayerConfiguration(
+            looping: true,
+            fit: BoxFit.contain,
+            autoPlay: false,
+            overlay: Container(color: Colors.transparent),
+            autoDispose: true),
+        betterPlayerDataSource: betterPlayerDataSource);
   }
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 9,
-      child: BetterPlayer.network(
-        "http://172.19.32.1:8080/bee.mp4",
-        betterPlayerConfiguration: BetterPlayerConfiguration(
-          aspectRatio: 16 / 9,
-        ),
+    return FractionallySizedBox(
+      widthFactor: 100,
+      child: BetterPlayer(
+        controller: _betterPlayerController,
       ),
     );
   }

@@ -23,7 +23,7 @@ class _VideoMainState extends State<VideoMain> {
           child: DyVideo(),
         ),
         Positioned(
-            bottom: 10,
+            bottom: 20,
             left: 10,
             child: VideoInfo(
               author: '港漂的小石头',
@@ -39,7 +39,7 @@ class _VideoMainState extends State<VideoMain> {
         Positioned(
           child: VideoOprations(),
           right: 10,
-          bottom: 10,
+          bottom: 20,
         )
       ],
     );

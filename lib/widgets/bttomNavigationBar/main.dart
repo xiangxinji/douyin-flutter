@@ -74,9 +74,13 @@ class DyBottomNavigationBarItem extends StatelessWidget {
 
   late bool active;
 
-  TextStyle ts = TextStyle(fontSize: 15, color: Colors.white);
+  TextStyle ts = TextStyle(
+      fontSize: 16,
+      color: Color.fromRGBO(255, 255, 255, 0.6),
+      fontWeight: FontWeight.bold);
 
-  TextStyle activeTextStyle = TextStyle(color: Colors.red);
+  TextStyle activeTextStyle =
+      TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16);
 
   DyBottomNavigationBarItem(
       {super.key,

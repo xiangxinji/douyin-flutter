@@ -27,18 +27,19 @@ class VideoInfo extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 4),
             child: Text(
               '@$author',
-              style: TextStyle(color: Colors.white, fontSize: 15),
+              style: TextStyle(color: Colors.white, fontSize: 17),
             ),
           ),
           Wrap(
             children: [
               Text(
                 title,
-                style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.7)),
+                style: TextStyle(
+                    color: Color.fromRGBO(255, 255, 255, 0.7), fontSize: 15),
               ),
               ...tags.map((e) => Text(
                     '#$e',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                   ))
             ],
           )

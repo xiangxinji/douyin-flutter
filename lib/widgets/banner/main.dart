@@ -6,7 +6,13 @@ class DyBanner extends StatelessWidget {
   final double width;
   final double height;
 
-  const DyBanner({super.key, required this.width, required this.height});
+  final double standardHeight;
+
+  const DyBanner(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.standardHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class DyBanner extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/video1.jpg'),
-              fit: BoxFit.fitWidth)),
+              fit: height > standardHeight ? BoxFit.cover : BoxFit.fitWidth)),
     );
   }
 }

@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: dw,
       height: dh,
-      color: Colors.grey,
+      color: Color.fromRGBO(22, 22, 22, 1),
       child: Stack(
         children: [
           PageView(
